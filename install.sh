@@ -31,7 +31,7 @@ if [ -e "$file" ]; then rm -rf /opt/pgstage; fi
 
 rm -rf /opt/pgstage/place.holder 1>/dev/null 2>&1
 
-git clone -b v8 --single-branch https://github.com/PGBlitz/Installer.git /opt/pgstage
+git clone -b v8 --single-branch https://github.com/PGBlitz/Install.git /opt/pgstage
 
 mkdir -p /var/plexguide/logs
 echo "127.0.0.1:" > /var/plexguide/server.ports
