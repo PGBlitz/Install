@@ -1,5 +1,5 @@
-8.4.21
-8.5-beta4
+8.5.0
+8.5base
 ###########################-VERSIONS-PRIOR
 8.4.18
 ###### DONT RECOMMEND BELOW (ARCHIEVED VERSIONS)
