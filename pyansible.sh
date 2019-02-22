@@ -6,6 +6,7 @@
       libffi-dev \
       python3-dev \
       python3-pip \
+      python3-testresources \
       python-dev \
       python-pip
   python3 -m pip install --disable-pip-version-check --upgrade --force-reinstall pip==19.0.2
