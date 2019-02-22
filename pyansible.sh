@@ -5,6 +5,7 @@
       libssl-dev \
       libffi-dev \
       python3-dev \
+      python3-testresources \
       python3-pip \
       python-dev \
       python-pip
