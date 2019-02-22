@@ -1,5 +1,5 @@
 8.5.1
-v8.5base
+8.5.2a
 ###########################-VERSIONS-PRIOR
 8.5.0
 ###### DONT RECOMMEND BELOW (ARCHIEVED VERSIONS)
@@ -9,3 +9,4 @@ v8.5base
 ###########################-COMMANDS-BELOW-FOR-TESTING
 next
 v8.4base
+v8.5base
