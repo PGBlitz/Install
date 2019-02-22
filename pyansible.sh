@@ -13,10 +13,16 @@
   python3 -m pip install --disable-pip-version-check --upgrade --force-reinstall \
       pyOpenSSL \
       requests \
-      netaddr
+      netaddr \
+      lxml
   python -m pip install --disable-pip-version-check --upgrade --force-reinstall pip==19.0.2
   python -m pip install --disable-pip-version-check --upgrade --force-reinstall setuptools
-  python -m pip install --disable-pip-version-check --upgrade --force-reinstall ansible==${1-2.7.7}
+    python -m pip install --disable-pip-version-check --upgrade --force-reinstall \
+      pyOpenSSL \
+      requests \
+      netaddr \
+      lxml
+  python -m pip install --disable-pip-version-check --upgrade --force-reinstall ansible==${1-2.7.8}
 
   ## Copy pip to /usr/bin
   cp /usr/local/bin/pip /usr/bin/pip
