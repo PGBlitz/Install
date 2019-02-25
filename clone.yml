@@ -14,5 +14,5 @@
       git:
         repo: "https://github.com/Admin9705/PlexGuide.com-The-Awesome-Plex-Server"
         dest: /opt/plexguide
-        version: "v8.4base"
+        version: "v8.5base"
         force: yes
