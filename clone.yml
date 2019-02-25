@@ -10,7 +10,7 @@
   gather_facts: false
   tasks:
 
-    - name: Cloning PlexGuide
+    - name: Cloning PG Blitz - From Installer
       git:
         repo: "https://github.com/Admin9705/PlexGuide.com-The-Awesome-Plex-Server"
         dest: /opt/plexguide
