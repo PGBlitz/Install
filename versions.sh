@@ -1,6 +1,7 @@
-8.5.4
+8.5.6
 v8.5base
 ###########################-VERSIONS-PRIOR
+8.5.4
 8.5.0
 ###### DONT RECOMMEND BELOW (ARCHIEVED VERSIONS)
 8.4.20
