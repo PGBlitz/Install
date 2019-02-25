@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # Title:      PlexGuide (Reference Title File)
-# Author(s):  Admin9705 - Deiteq
-# URL:        https://plexguide.com - http://github.plexguide.com
+# Author(s):  Admin9705 - Deiteq - Sub7Seven
+# URL:        https://pgblitz.com - http://github.plexguide.com
 # GNU:        General Public License v3.0
 ################################################################################
 
@@ -13,9 +13,9 @@ apt-get install software-properties-common git zip unzip dialog -y
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🌎  INSTALLING: PlexGuide Notice
+🌎  INSTALLING: PGBlitz Notice
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-By Installing PlexGuide, you are agreeing to the terms and conditions
+By Installing PGBlitz, you are agreeing to the terms and conditions
 of the GNUv3 Project License! Please Standby...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -52,7 +52,7 @@ cp /opt/plexguide/menu/alias/templates/plexguide /bin/plexguide
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⌛  Verifiying PlexGuide Installed @ /bin/plexguide - Please Standby!
+⌛  Verifiying PGBlitz / PlexGuide Installed @ /bin/plexguide - Standby!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 sleep 2
@@ -62,7 +62,7 @@ if [ ! -e "$file" ]; then
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⛔️  WARNING! Installed Failed! PlexGuide Command Missing!
+⛔️  WARNING! Installed Failed! PGBlitz / PlexGuide Command Missing!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Please Reinstall PlexGuide by running the Command Again! We are doing
 this to ensure that your installation continues to work!
@@ -74,7 +74,7 @@ fi
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅️  PASSED! The PlexGuide Command Installed!
+✅️  PASSED! The PGBlitz / PlexGuide Command Installed!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 rm -rf /var/plexguide/new.install 1>/dev/null 2>&1
@@ -89,7 +89,7 @@ mkdir -p /var/plexguide
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-↘️  Start AnyTime By Typing >>> plexguide
+↘️  Start AnyTime By Typing >>> pgblitz [or] plexguide
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 EOF
