@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Title:      PlexGuide (Reference Title File)
+# Title:      PGBlitz (Reference Title File)
 # Author(s):  Admin9705 - Deiteq - Sub7Seven
 # URL:        https://pgblitz.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
@@ -52,7 +52,7 @@ cp /opt/plexguide/menu/alias/templates/plexguide /bin/plexguide
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⌛  Verifiying PGBlitz / PlexGuide Installed @ /bin/plexguide - Standby!
+⌛  Verifiying PGBlitz / PGBlitz Installed @ /bin/plexguide - Standby!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 sleep 2
@@ -62,9 +62,9 @@ if [ ! -e "$file" ]; then
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⛔️  WARNING! Installed Failed! PGBlitz / PlexGuide Command Missing!
+⛔️  WARNING! Installed Failed! PGBlitz / PGBlitz Command Missing!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Please Reinstall PlexGuide by running the Command Again! We are doing
+Please Reinstall PGBlitz by running the Command Again! We are doing
 this to ensure that your installation continues to work!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
@@ -74,7 +74,7 @@ fi
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅️  PASSED! The PGBlitz / PlexGuide Command Installed!
+✅️  PASSED! The PGBlitz / PGBlitz Command Installed!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 rm -rf /var/plexguide/new.install 1>/dev/null 2>&1
