@@ -47,7 +47,7 @@ echo "51" > /var/plexguide/pg.pythonstart.stored
 
 ansible-playbook /opt/pgstage/clone.yml
 cp /opt/plexguide/menu/alias/templates/plexguide /bin/plexguide
-cp /opt/plexguide/menu/alias/templates/plexguide /bin/pgbitz
+cp /opt/plexguide/menu/alias/templates/pgblitz /bin/pgblitz
 
 tee <<-EOF
 
