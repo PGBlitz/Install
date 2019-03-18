@@ -79,9 +79,9 @@ tee <<-EOF
 EOF
 rm -rf /var/plexguide/new.install 1>/dev/null 2>&1
 sleep 2
-chmod 755 /bin/plexguide
+chmod 775 /bin/plexguide
 chown 1000:1000 /bin/plexguide
-chmod 755 /bin/pgblitz
+chmod 775 /bin/pgblitz
 chown 1000:1000 /bin/pgblitz
 
 ## Other Folders
