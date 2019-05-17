@@ -14,5 +14,5 @@
       git:
         repo: "https://github.com/PGBlitz/PGBlitz.com"
         dest: /opt/plexguide
-        version: "v8.5base"
+        version: "900"
         force: yes
