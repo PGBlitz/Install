@@ -10,7 +10,7 @@
   gather_facts: false
   tasks:
 
-    - name: Cloning PG Blitz - From Installer
+    - name: Cloning PG Blitz v9
       git:
         repo: "https://github.com/PGBlitz/PGBlitz.com"
         dest: /opt/plexguide
