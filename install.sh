@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Title:      PGBlitz (Reference Title File)
-# Author(s):  Admin9705 - Deiteq - Sub7Seven
+# Author(s):  Admin9705 - Deiteq - MrDoob
 # URL:        https://pgblitz.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
@@ -38,31 +38,27 @@ chown 1000:1000 "${var59}"
 # Clone the Program to Stage for Installation
 git clone -b v1 --single-branch https://github.com/PGBlitz/Stage.git /pg/stage
 
-echo "" > /pg/var/server.ports
-echo "1" > /pg/var/pg.pythonstart
-touch /pg/var/pg.pythonstart.stored
-start=$(cat /pg/var/pg.pythonstart)
-stored=$(cat /pg/var/pg.pythonstart.stored)
-
-if [ "$start" != "$stored" ]; then
-bash /pg/stage/pyansible.sh
+# Checking to See if the Installer ever Installed Python; if so... skip
+var37="/pg/var/python.firstime"
+if [[ ! -e "${var37}" ]]; then
+  bash /pg/stage/pyansible.sh
+  touch /pg/var/python.firstime
 fi
-echo "51" > /var/plexguide/pg.pythonstart.stored
 
+# Clone the Staging Programing ~ By Using Ansible; ensures that it works also
 ansible-playbook /pg/stage/clone.yml
 
 # Copy Starting Commands for PGBlitz
-path="/pg/stage/alias/templates/plexguide"
+path="/pg/stage/alias"
 cp -t /bin $path/plexguide $path/pg $path/pgblitz
 
 # Verifying the Commands Installed
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⌛  Verifiying Started Commands Installed via @ /bin- Standby!
+⌛  Verifiying Started Commands Installed via @ /bin
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
-sleep 1
 
 # Installation fails if the pgblitz command is not in the correct location
 if [[ ! -e "/bin/pgblitz" ]]; then
@@ -90,8 +86,6 @@ tee <<-EOF
 ✅️  PASSED! The PGBlitz Command Installed! ~ http://pgblitz.wiki
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
-
-rm -rf /pg/var/new.install 1>/dev/null 2>&1
 
 var42="/bin/plexguide /bin/pgblitz /bin/pg"
 chmod 775 "${var52}"
