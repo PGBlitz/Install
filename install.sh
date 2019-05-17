@@ -45,7 +45,7 @@ if [[ ! -e "${var37}" ]]; then
   touch /pg/var/python.firstime
 fi
 
-# Clone the Staging Programing ~ By Using Ansible; ensures that it works also
+# Clone the Staging Programming ~ By Using Ansible; ensures that it works also
 ansible-playbook /pg/stage/clone.yml
 
 # Copy Starting Commands for PGBlitz
