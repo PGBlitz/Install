@@ -30,7 +30,7 @@ if [ -e "/pg/stage" ]; then rm -rf /pg/stage; fi
 rm -rf /pg/stage/place.holder 1>/dev/null 2>&1
 
 # Make Critical Folders
-var59="/pg/logs /pg/var /pg/data /pg/stage"
+var59="/pg /pg/logs /pg/var /pg/data /pg/stage"
 mkdir -p "${var59}"
 chmod 775 "${var59}"
 chown 1000:1000 "${var59}"
