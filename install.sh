@@ -17,7 +17,7 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🌎  INSTALLING: PGBlitz Notice - Version 9
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-By ifnstalling PGBlitz, you are agreeing to the terms and conditions
+By installing PGBlitz, you are agreeing to the terms and conditions
 of the GNUv3 Project License! Please Standby...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -45,7 +45,8 @@ if [[ ! -e "${var37}" ]]; then
   touch /pg/var/python.firstime
 fi
 
-# Clone the Staging Programming ~ By Using Ansible; ensures that it works also
+# Clone PGBlitz into /pg/blitz/ ~ this is found under the module - Stage
+# The values of clone should automatically change with a version change above
 ansible-playbook /pg/stage/clone.yml
 
 # Copy Starting Commands for PGBlitz
