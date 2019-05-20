@@ -21,8 +21,8 @@ By installing PGBlitz, you are agreeing to the terms and conditions
 of the GNUv3 Project License! Please Standby...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Thank You: Davaz, Deiteq, FlickerRate, ClownFused, MrDoob, and to the
-ghost of Sub7Seven, and the Community!
+Thank You: Davaz, Deiteq, FlickerRate, ClownFused, MrDoob, Sub7Seven,
+Desimaniac, l3uddz, and the Community!
 
 EOF
 sleep 3
