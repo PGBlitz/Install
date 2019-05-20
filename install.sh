@@ -33,10 +33,9 @@ if [ -e "/pg/stage" ]; then rm -rf /pg/stage; fi
 rm -rf /pg/stage/place.holder 1>/dev/null 2>&1
 
 # Make Critical Folders
-var59="/pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp"
-mkdir -p "${var59}"
-chmod 775 "${var59}"
-chown 1000:1000 "${var59}"
+mkdir -p /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
+chmod 775 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
+chown 1000:1000 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp}
 
 # Clone the Program to Stage for Installation
 git clone -b v1 --single-branch https://github.com/PGBlitz/Stage.git /pg/stage
