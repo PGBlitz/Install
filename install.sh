@@ -17,9 +17,9 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🌎  NOTICE: PGBlitz Version 9 - Installer
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-By installing you agreeing to the terms and conditions of the GNUv3 License!
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Thank You: Davaz, Deiteq, FlickerRate, ClownFused, MrDoob, Sub7Seven,
+By installing, you agreeing to the terms and conditions of the GNUv3 License!
+
+Thanks To: Davaz, Deiteq, FlickerRate, ClownFused, MrDoob, Sub7Seven,
 Desimaniac, l3uddz, and to the caring Community (& Linux Noobs)!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
