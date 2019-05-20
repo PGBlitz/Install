@@ -15,11 +15,14 @@ apt-get install software-properties-common git zip unzip dialog -y
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🌎  INSTALLING: PGBlitz Notice - Version 9
+🌎  INSTALLING: PGBlitz Version 9 - Installer
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 By installing PGBlitz, you are agreeing to the terms and conditions
 of the GNUv3 Project License! Please Standby...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Thank You: Davaz, Deiteq, FlickerRate, ClownFused, MrDoob, and to the
+ghost of Sub7Seven, and the Community!
 
 EOF
 sleep 3
