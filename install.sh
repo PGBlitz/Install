@@ -40,7 +40,7 @@ git clone -b v1 --single-branch https://github.com/PGBlitz/Stage.git /pg/stage
 
 # Checking to See if the Installer ever Installed Python; if so... skip
 var37="/pg/var/python.firstime"
-if [[ ! -e "${var37}" ]]; then
+if [ ! -e "${var37}" ]; then
   bash /pg/stage/pyansible.sh
   touch /pg/var/python.firstime
 fi
