@@ -90,6 +90,9 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 
+# creates a blank var; if this executes; pgblitz will go through the install process
+touch /pg/var/new.install
+
 chmod 775 /bin/plexguide /bin/pgblitz /bin/pg
 chown 1000:1000 /bin/plexguide /bin/pgblitz /bin/pg
 
