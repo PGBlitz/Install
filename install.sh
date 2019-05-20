@@ -17,15 +17,13 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🌎  NOTICE: PGBlitz Version 9 - Installer
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-By installing PGBlitz, you are agreeing to the terms and conditions
-of the GNUv3 Project License! Please Standby...
+By installing you agreeing to the terms and conditions of the GNUv3 License!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
 Thank You: Davaz, Deiteq, FlickerRate, ClownFused, MrDoob, Sub7Seven,
 Desimaniac, l3uddz, and the Community!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-“Being a student is easy. Learning requires actual work.” ~ William Crawford
-
+Please Standby!
 EOF
 sleep 4
 
