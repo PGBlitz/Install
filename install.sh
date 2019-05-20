@@ -92,8 +92,8 @@ tee <<-EOF
 EOF
 
 var42="/bin/plexguide /bin/pgblitz /bin/pg"
-chmod 775 "${var52}"
-chown 1000:1000 "${var52}"
+chmod 775 "${var42}"
+chown 1000:1000 "${var42}"
 
 tee <<-EOF
 
