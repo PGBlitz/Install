@@ -35,7 +35,7 @@ rm -rf /pg/stage/place.holder 1>/dev/null 2>&1
 # Make Critical Folders
 mkdir -p /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
 chmod 775 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
-chown 1000:1000 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp}
+chown 1000:1000 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
 
 # Clone the Program to Stage for Installation
 git clone -b v1 --single-branch https://github.com/PGBlitz/Stage.git /pg/stage
@@ -90,9 +90,8 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 
-var42="/bin/plexguide /bin/pgblitz /bin/pg"
-chmod 775 "${var42}"
-chown 1000:1000 "${var42}"
+chmod 775 /bin/plexguide /bin/pgblitz /bin/pg
+chown 1000:1000 /bin/plexguide /bin/pgblitz /bin/pg
 
 tee <<-EOF
 
