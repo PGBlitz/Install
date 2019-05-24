@@ -7,10 +7,10 @@
 ################################################################################
 
 # Upgrade
-apt-get update -y
+#apt-get update -y
 
 # apt-get upgrade -y # causes problems when you forced on an interactive screen
-apt-get install software-properties-common git zip unzip dialog -y
+#apt-get install software-properties-common git zip unzip dialog -y
 
 tee <<-EOF
 
@@ -19,13 +19,13 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 By installing, you agreeing to the terms and conditions of the GNUv3 License!
 
-Thanks To: Davaz, Deiteq, FlickerRate, ClownFused, MrDoob, Sub7Seven, 
+Thanks To: Davaz, Deiteq, FlickerRate, ClownFused, MrDoob, Sub7Seven,
 TimeKills, The Creator, and to the caring Community (& Linux Noobs)!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Please Standby!
 EOF
-sleep 4
+#sleep 4
 
 # Delete If it Exist for Cloning
 if [ -e "/pg/blitz" ]; then rm -rf /pg/blitz; fi
