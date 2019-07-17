@@ -34,16 +34,16 @@ rm -rf /opt/pgstage/place.holder 1>/dev/null 2>&1
 git clone -b v8.5 --single-branch https://github.com/PGBlitz/Install.git /opt/pgstage
 
 mkdir -p /var/plexguide/logs
-echo "" > /var/plexguide/server.ports
-echo "51" > /var/plexguide/pg.pythonstart
+echo "" >/var/plexguide/server.ports
+echo "51" >/var/plexguide/pg.pythonstart
 touch /var/plexguide/pg.pythonstart.stored
 start=$(cat /var/plexguide/pg.pythonstart)
 stored=$(cat /var/plexguide/pg.pythonstart.stored)
 
 if [ "$start" != "$stored" ]; then
-bash /opt/pgstage/pyansible.sh
+    bash /opt/pgstage/pyansible.sh
 fi
-echo "51" > /var/plexguide/pg.pythonstart.stored
+echo "51" >/var/plexguide/pg.pythonstart.stored
 
 ansible-playbook /opt/pgstage/clone.yml
 cp /opt/plexguide/menu/alias/templates/plexguide /bin/plexguide
@@ -60,7 +60,7 @@ sleep 2
 
 file="/bin/plexguide"
 if [ ! -e "$file" ]; then
-tee <<-EOF
+    tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⛔️  WARNING! Installed Failed! PGBlitz / PGBlitz Command Missing!
@@ -69,7 +69,7 @@ Please Reinstall PGBlitz by running the Command Again! We are doing
 this to ensure that your installation continues to work!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
-exit
+    exit
 fi
 
 tee <<-EOF
