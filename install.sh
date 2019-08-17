@@ -10,7 +10,7 @@
 #apt-get update -y
 
 # apt-get upgrade -y # causes problems when you forced on an interactive screen
-#apt-get install software-properties-common git zip unzip dialog -y
+#apt-get install software-properties-common git zip unzip dialog ansible -y
 
 tee <<-EOF
 
