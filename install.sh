@@ -19,8 +19,7 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 By installing, you agreeing to the terms and conditions of the GNUv3 License!
 
-Thanks To: Davaz, Deiteq, FlickerRate, ClownFused, MrDoob, Sub7Seven,
-TimeKills, The Creator, and to the caring Community (& Linux Noobs)!
+Thanks To The: Linux Noobs, Sponsors, Supporters, Community, & You!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Please Standby!
