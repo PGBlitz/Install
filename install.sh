@@ -29,32 +29,43 @@ sleep 3
 # WebServer Check
 tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⌛  Check for existing Webserver is running - Standby
+⌛  Base Install - Standby
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
-if lsof -Pi :80 -sTCP:LISTEN -t >/dev/null ; then
-        service apache2 stop 2>&1 >> /dev/null
-        service nginx stop 2>&1 >> /dev/null
-        apt-get purge apache nginx -yqq 2>&1 >> /dev/null
-        apt-get autoremove -yqq 2>&1 >> /dev/null
-        apt-get autoclean -yqq 2>&1 >> /dev/null
-	
-elif lsof -Pi :443 -sTCP:LISTEN -t >/dev/null ; then
-        service apache2 stop 2>&1 >> /dev/null
-        service nginx stop 2>&1 >> /dev/null
-        apt-get purge apache nginx -yqq 2>&1 >> /dev/null
-        apt-get autoremove -yqq 2>&1 >> /dev/null
-        apt-get autoclean -yqq 2>&1 >> /dev/null
-else
-    echo "Great! No Services are Utilizing Port 80 & 443"
+apt-get install lsb-release -yqq 2>&1 >> /dev/null
+	export DEBIAN_FRONTEND=noninteractive
+apt-get install software-properties-common -yqq 2>&1 >> /dev/null
+	export DEBIAN_FRONTEND=noninteractive
+#repo-check
+fullrel=$(lsb_release -sd)
+osname=$(lsb_release -si)
+## original code relno=$(lsb_release -sr | cut -d. -f1)
+relno=$(lsb_release -sr)
+hostname=$(hostname -I | awk '{print $1}')
+# add repo
+osname=$([ "$osname" = "Ubuntu" ] && [ $relno -ge 15 ] && [ $relno -le 18.09 ) || ([ "$osname" = "Debian" ] && [ $relno -ge 8 ])
+if echo $osname "Debian" ; then
+	add-apt-repository main 2>&1 >> /dev/null
+	add-apt-repository non-free 2>&1 >> /dev/null
+	add-apt-repository contrib 2>&1 >> /dev/null
+elif echo $osname "Ubuntu" ; then
+	add-apt-repository main 2>&1 >> /dev/null
+	add-apt-repository universe 2>&1 >> /dev/null
+	add-apt-repository restricted 2>&1 >> /dev/null
+	add-apt-repository multiverse 2>&1 >> /dev/null
+elif echo $osname "Rasbian" "Fedora" "CentOS"; then
+tee <<-EOF
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⛔ OS Warning
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. UB 16.04/18.04 LTS/Server & Debian 9+ are supported!
+2. Please read https://pgblitz.com/threads/pg-install-instructions.243
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EOF
+  sleep 3
+  exit 1
 fi
-tee <<-EOF
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ PASSED ! Check for existing Webserver is done !
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-EOF
-sleep 3
-tee <<-EOF
 
 # Delete If it Exist for Cloning
 if [ -e "/pg/blitz" ]; then rm -rf /pg/blitz; fi
