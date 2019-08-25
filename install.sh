@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Title:      PGBlitz (Reference Title File)
-# Author(s):  Admin9705 - Deiteq - MrDoob
+# Author(s):  Admin9705 - Deiteq
 # URL:        https://pgblitz.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
@@ -24,7 +24,7 @@ Thanks To: The Community, Linux Noobs, Sponsors/Donors, Community, & You!
 
 Please Standby!
 EOF
-sleep 1
+sleep 3
 
 # WebServer Check
 tee <<-EOF
@@ -45,16 +45,15 @@ elif lsof -Pi :443 -sTCP:LISTEN -t >/dev/null ; then
         apt-get purge apache nginx -yqq 2>&1 >> /dev/null
         apt-get autoremove -yqq 2>&1 >> /dev/null
         apt-get autoclean -yqq 2>&1 >> /dev/null
-
 else
-    echo "Good no service runs on port 80 & 443"
+    echo "Great! No Services are Utilizing Port 80 & 443"
 fi
 tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ✅ PASSED ! Check for existing Webserver is done !
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
-sleep 5
+sleep 3
 tee <<-EOF
 
 # Delete If it Exist for Cloning
