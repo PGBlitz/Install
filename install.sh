@@ -24,7 +24,38 @@ Thanks To: The Community, Linux Noobs, Sponsors/Donors, Community, & You!
 
 Please Standby!
 EOF
-#sleep 4
+sleep 1
+
+# WebServer Check
+tee <<-EOF
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⌛  Check for existing Webserver is running - Standby
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EOF
+if lsof -Pi :80 -sTCP:LISTEN -t >/dev/null ; then
+        service apache2 stop 2>&1 >> /dev/null
+        service nginx stop 2>&1 >> /dev/null
+        apt-get purge apache nginx -yqq 2>&1 >> /dev/null
+        apt-get autoremove -yqq 2>&1 >> /dev/null
+        apt-get autoclean -yqq 2>&1 >> /dev/null
+	
+elif lsof -Pi :443 -sTCP:LISTEN -t >/dev/null ; then
+        service apache2 stop 2>&1 >> /dev/null
+        service nginx stop 2>&1 >> /dev/null
+        apt-get purge apache nginx -yqq 2>&1 >> /dev/null
+        apt-get autoremove -yqq 2>&1 >> /dev/null
+        apt-get autoclean -yqq 2>&1 >> /dev/null
+
+else
+    echo "Good no service runs on port 80 & 443"
+fi
+tee <<-EOF
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ PASSED ! Check for existing Webserver is done !
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EOF
+sleep 5
+tee <<-EOF
 
 # Delete If it Exist for Cloning
 if [ -e "/pg/blitz" ]; then rm -rf /pg/blitz; fi
