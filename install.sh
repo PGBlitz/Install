@@ -19,14 +19,18 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 By installing, you agreeing to the terms and conditions of the GNUv3 License!
 
-Thanks To: The Community, Linux Noobs, Sponsors/Donors, Community, & You!
+Thanks To: The Community, Staff, Noobs, Sponsors/Donors, Community, & You!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Please Standby!
 EOF
 sleep 3
 
-# WebServer Check
+# Make Critical Folders
+mkdir -p /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
+chmod 775 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
+chown 1000:1000 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
+
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -37,24 +41,26 @@ apt-get install lsb-release -yqq 2>&1 >> /dev/null
 	export DEBIAN_FRONTEND=noninteractive
 apt-get install software-properties-common -yqq 2>&1 >> /dev/null
 	export DEBIAN_FRONTEND=noninteractive
-#repo-check
-fullrel=$(lsb_release -sd)
-osname=$(lsb_release -si)
-## original code relno=$(lsb_release -sr | cut -d. -f1)
-relno=$(lsb_release -sr)
-hostname=$(hostname -I | awk '{print $1}')
-# add repo
-osname=$([ "$osname" = "Ubuntu" ] && [ $relno -ge 15 ] && [ $relno -le 18.09 ) || ([ "$osname" = "Debian" ] && [ $relno -ge 8 ])
-if echo $osname "Debian" ; then
+
+entirelabel=$(lsb_release -sd)
+echo "$entirelabel" > /pg/var/entirelabel
+
+shortlabel=$(lsb_release -si)
+echo "$shortlabel" > /pg/var/shortlabel
+
+ipinfo=$(hostname -I | awk '{print $1}')
+echo "$ipinfo" > /pg/var/ip.info
+
+if [[ "$oslabel" == "Debian"]]; then
 	add-apt-repository main 2>&1 >> /dev/null
 	add-apt-repository non-free 2>&1 >> /dev/null
 	add-apt-repository contrib 2>&1 >> /dev/null
-elif echo $osname "Ubuntu" ; then
+elif [[ "$oslabel" == "Ubuntu"]]; then
 	add-apt-repository main 2>&1 >> /dev/null
 	add-apt-repository universe 2>&1 >> /dev/null
 	add-apt-repository restricted 2>&1 >> /dev/null
 	add-apt-repository multiverse 2>&1 >> /dev/null
-elif echo $osname "Rasbian" "Fedora" "CentOS"; then
+elif echo $oslabel "Rasbian" "Fedora" "CentOS"; then
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -73,11 +79,6 @@ fi
 if [ -e "/pg/blitz" ]; then rm -rf /pg/blitz; fi
 if [ -e "/pg/stage" ]; then rm -rf /pg/stage; fi
 rm -rf /pg/stage/place.holder 1>/dev/null 2>&1
-
-# Make Critical Folders
-mkdir -p /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
-chmod 775 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
-chown 1000:1000 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
 
 # Clone the Program to Stage for Installation
 git clone -b v1 --single-branch https://github.com/PGBlitz/Stage.git /pg/stage
