@@ -46,6 +46,7 @@ fi
 # Clone PGBlitz into /pg/blitz/ ~ this is found under the module - Stage
 # The values of clone should automatically change with a version change above
 ansible-playbook /pg/stage/clone.yml
+bash /pg/stage/pgcloner/solo/update.sh
 
 # Copy Starting Commands for PGBlitz
 path="/pg/stage/alias"
