@@ -31,50 +31,6 @@ mkdir -p /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
 chmod 775 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
 chown 1000:1000 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
 
-tee <<-EOF
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⌛  Conducting OS Checks - Standby
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-EOF
-apt-get install lsb-release -yqq 2>&1 >> /dev/null
-	export DEBIAN_FRONTEND=noninteractive
-apt-get install software-properties-common -yqq 2>&1 >> /dev/null
-	export DEBIAN_FRONTEND=noninteractive
-
-entirelabel=$(lsb_release -sd)
-echo "$entirelabel" > /pg/var/entirelabel
-
-shortlabel=$(lsb_release -si)
-echo "$shortlabel" > /pg/var/shortlabel
-
-ipinfo=$(hostname -I | awk '{print $1}')
-echo "$ipinfo" > /pg/var/ip.info
-
-elif echo $osname "Debian"; then
-	add-apt-repository main 2>&1 >> /dev/null
-	add-apt-repository non-free 2>&1 >> /dev/null
-	add-apt-repository contrib 2>&1 >> /dev/null
-elif echo $osname "Ubuntu"; then
-	add-apt-repository main 2>&1 >> /dev/null
-	add-apt-repository universe 2>&1 >> /dev/null
-	add-apt-repository restricted 2>&1 >> /dev/null
-	add-apt-repository multiverse 2>&1 >> /dev/null
-elif [[ "$shortlabel" == "Rasbian" || "$shortlabel" == "Fedora" || "$shortlabel" == "CentOS" ]]; then
-tee <<-EOF
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⛔ OS Warning
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. UB 16.04/18.04 LTS/Server & Debian 9+ are supported!
-2. Please read https://pgblitz.com/threads/pg-install-instructions.243
-3. This will proceed onward; but you have been warned!
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-EOF
-  sleep 10
-fi
-
 # Delete If it Exist for Cloning
 if [ -e "/pg/blitz" ]; then rm -rf /pg/blitz; fi
 if [ -e "/pg/stage" ]; then rm -rf /pg/stage; fi
