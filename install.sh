@@ -32,6 +32,7 @@ rm -rf /pg/stage/place.holder 1>/dev/null 2>&1
 mkdir -p /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
 chmod 775 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
 chown 1000:1000 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
+rm -rf /pg/var/first.update 1>/dev/null 2>&1
 
 # Clone the Program to Stage for Installation
 git clone -b v1 --single-branch https://github.com/PGBlitz/Stage.git /pg/stage
@@ -60,7 +61,7 @@ tee <<-EOF
 EOF
 
 # Installation fails if the pgblitz command is not in the correct location
-if [[ ! -e "/bin/pgblitz" ]]; then
+if [ ! -e "/bin/pgblitz" ]; then
 tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⛔️  WARNING! The PGBlitz Installer Failed ~ http://pgblitz.wiki
