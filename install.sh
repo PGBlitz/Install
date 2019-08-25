@@ -60,7 +60,7 @@ elif [[ "$oslabel" == "Ubuntu" ]]; then
 	add-apt-repository universe 2>&1 >> /dev/null
 	add-apt-repository restricted 2>&1 >> /dev/null
 	add-apt-repository multiverse 2>&1 >> /dev/null
-elif [[ "$oslabel" == "Rasbian" || "$oslabel" == "Fedora" || "$oslabel" == "CentOS"; then
+elif [[ "$oslabel" == "Rasbian" || "$oslabel" == "Fedora" || "$oslabel" == "CentOS" ]]; then
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -68,11 +68,11 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 1. UB 16.04/18.04 LTS/Server & Debian 9+ are supported!
 2. Please read https://pgblitz.com/threads/pg-install-instructions.243
+3. This will proceed onward; but you have been warned!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 EOF
-  sleep 3
-  exit 1
+  sleep 10
 fi
 
 # Delete If it Exist for Cloning
