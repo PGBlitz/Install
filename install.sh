@@ -28,8 +28,9 @@ sleep 3
 
 # WebServer Check
 tee <<-EOF
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⌛  Base Install - Standby
+⌛  Conducting OS Checks - Standby
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 apt-get install lsb-release -yqq 2>&1 >> /dev/null
@@ -55,6 +56,7 @@ elif echo $osname "Ubuntu" ; then
 	add-apt-repository multiverse 2>&1 >> /dev/null
 elif echo $osname "Rasbian" "Fedora" "CentOS"; then
 tee <<-EOF
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⛔ OS Warning
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
