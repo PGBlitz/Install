@@ -51,16 +51,16 @@ echo "$shortlabel" > /pg/var/shortlabel
 ipinfo=$(hostname -I | awk '{print $1}')
 echo "$ipinfo" > /pg/var/ip.info
 
-if [[ "$oslabel" == "Debian"]]; then
+if [[ "$oslabel" == "Debian" ]]; then
 	add-apt-repository main 2>&1 >> /dev/null
 	add-apt-repository non-free 2>&1 >> /dev/null
 	add-apt-repository contrib 2>&1 >> /dev/null
-elif [[ "$oslabel" == "Ubuntu"]]; then
+elif [[ "$oslabel" == "Ubuntu" ]]; then
 	add-apt-repository main 2>&1 >> /dev/null
 	add-apt-repository universe 2>&1 >> /dev/null
 	add-apt-repository restricted 2>&1 >> /dev/null
 	add-apt-repository multiverse 2>&1 >> /dev/null
-elif echo $oslabel "Rasbian" "Fedora" "CentOS"; then
+elif [[ "$oslabel" == "Rasbian" || "$oslabel" == "Fedora" || "$oslabel" == "CentOS"; then
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
