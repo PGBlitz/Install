@@ -40,8 +40,20 @@ if [ ! -e "${var37}" ]; then
 fi
 
 tee <<-EOF
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⌛  Updating System - Please Standby
+⌛  Base install - Standby
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EOF
+apt-get install lsb-release -yqq 2>&1 >> /dev/null
+	export DEBIAN_FRONTEND=noninteractive
+apt-get install software-properties-common -yqq 2>&1 >> /dev/null
+	export DEBIAN_FRONTEND=noninteractive
+
+tee <<-EOF
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⌛  Updating the Server - Please Standby
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 apt-get update -yqq 2>&1 >> /dev/null
