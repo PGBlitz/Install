@@ -64,7 +64,7 @@ apt-get dist-upgrade -yqq 2>&1 >> /dev/null
 	export DEBIAN_FRONTEND=noninteractive
 apt-get autoremove -yqq 2>&1 >> /dev/null
 	export DEBIAN_FRONTEND=noninteractive
-apt-get install $package_list -yqq 2>&1 >> /dev/null
+apt-get install $package -yqq 2>&1 >> /dev/null
 	export DEBIAN_FRONTEND=noninteractive
 tee <<-EOF
 
