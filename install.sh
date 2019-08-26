@@ -56,6 +56,7 @@ tee <<-EOF
 ⌛  Updating the Server - Please Standby
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
+
 apt-get update -yqq 2>&1 >> /dev/null
 	export DEBIAN_FRONTEND=noninteractive
 apt-get upgrade -yqq 2>&1 >> /dev/null
@@ -66,14 +67,14 @@ apt-get autoremove -yqq 2>&1 >> /dev/null
 	export DEBIAN_FRONTEND=noninteractive
 apt-get install $package -yqq 2>&1 >> /dev/null
 	export DEBIAN_FRONTEND=noninteractive
+
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ✅ PASSED Update the System - finish
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EOF
 
-# Clone PGBlitz into /pg/blitz/ ~ this is found under the module - Stage
-# The values of clone should automatically change with a version change above
 ansible-playbook /pg/stage/clone.yml
 bash /pg/stage/pgcloner/solo/update.sh
 
@@ -82,6 +83,8 @@ path="/pg/stage/alias"
 cp -t /bin $path/plexguide $path/pg $path/pgblitz
 
 # Verifying the Commands Installed
+EOF
+
 tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⌛  Verifiying Started Commands Installed via @ /bin
