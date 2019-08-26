@@ -1,16 +1,11 @@
 #!/bin/bash
 #
 # Title:      PGBlitz (Reference Title File)
-# Author(s):  Admin9705 - Deiteq - MrDoob
+# Author(s):  Admin9705 - Deiteq
 # URL:        https://pgblitz.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
-
-# Upgrade
-#apt-get update -y
-
-# apt-get upgrade -y # causes problems when you forced on an interactive screen
-#apt-get install software-properties-common git zip unzip dialog -y
+package="curl wget software-properties-common git nano htop mc lshw zip unzip dialog sudo"
 
 tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -44,6 +39,27 @@ if [ ! -e "${var37}" ]; then
   touch /pg/var/python.firstime
 fi
 
+tee <<-EOF
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⌛  Updating System - Please Standby
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EOF
+apt-get update -yqq 2>&1 >> /dev/null
+	export DEBIAN_FRONTEND=noninteractive
+apt-get upgrade -yqq 2>&1 >> /dev/null
+	export DEBIAN_FRONTEND=noninteractive
+apt-get dist-upgrade -yqq 2>&1 >> /dev/null
+	export DEBIAN_FRONTEND=noninteractive
+apt-get autoremove -yqq 2>&1 >> /dev/null
+	export DEBIAN_FRONTEND=noninteractive
+apt-get install $package_list -yqq 2>&1 >> /dev/null
+	export DEBIAN_FRONTEND=noninteractive
+tee <<-EOF
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ PASSED Update the System - finish
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 # Clone PGBlitz into /pg/blitz/ ~ this is found under the module - Stage
 # The values of clone should automatically change with a version change above
 ansible-playbook /pg/stage/clone.yml
@@ -61,7 +77,9 @@ tee <<-EOF
 EOF
 
 # Installation fails if the pgblitz command is not in the correct location
-if [ ! -e "/bin/pgblitz" ]; then
+file="/bin/pgblitz"
+if [ ! -e "$file" ]; then
+
 tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⛔️  WARNING! The PGBlitz Installer Failed ~ http://pgblitz.wiki
