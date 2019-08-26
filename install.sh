@@ -29,9 +29,9 @@ if [ -e "/pg/stage" ]; then rm -rf /pg/stage; fi
 rm -rf /pg/stage/place.holder 1>/dev/null 2>&1
 
 # Make Critical Folders
-mkdir -p /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
-chmod 775 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
-chown 1000:1000 /pg /pg/logs /pg/var /pg/data /pg/stage /pg/logs /pg/tmp
+mkdir -p /pg /pg/logs /pg/data /pg/stage /pg/logs /pg/tmp /pg/var/install
+chmod 775 /pg /pg/logs /pg/data /pg/stage /pg/logs /pg/tmp /pg/var/install
+chown 1000:1000 /pg /pg/logs /pg/data /pg/stage /pg/logs /pg/tmp /pg/var/install
 rm -rf /pg/var/first.update 1>/dev/null 2>&1
 
 # Clone the Program to Stage for Installation
