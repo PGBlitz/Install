@@ -12,7 +12,7 @@ tee <<-EOF
 🌎  NOTICE: PGBlitz Version 9 - Installer
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 By installing, you agreeing to the terms and conditions of the GNUv3 License!
-Thanks To The: Linux Noobs, Sponsors, Supporters, Community, & You!
+Thanks To: You, the Linux Noobs, Sponsors, Supporters, Community & You!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Please Standby!
 EOF
@@ -42,7 +42,7 @@ fi
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⌛  Conduting a Base Install - Please Standby
+⌛  Executing a Base Install - Please Standby
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 apt-get install lsb-release -yqq 2>&1 >> /dev/null
@@ -53,7 +53,7 @@ apt-get install software-properties-common -yqq 2>&1 >> /dev/null
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⌛  Updating the Server - Please Standby
+⌛  Updating the Server - Please Standby (Can Take 1-2 Minutes)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 
