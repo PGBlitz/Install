@@ -57,23 +57,37 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 
-#repo-check
 fullrel=$(lsb_release -sd)
 osname=$(lsb_release -si)
-## original code relno=$(lsb_release -sr | cut -d. -f1)
 relno=$(lsb_release -sr)
+relno=$(printf "%.0f\n" "$relno")
 hostname=$(hostname -I | awk '{print $1}')
-# add repo
-osname=$([ "$osname" = "Ubuntu" ] && [ $relno -ge 15 ] && [ $relno -le 18.09 || [ "$osname" = "Debian" ] && [ $relno -ge 8 ])
-if echo $osname "Debian" ; then
+
+if [[ "$osname" == "Ubuntu" && "$relno" -ge "16" && "$relno" -le 18 ]]; then
 	add-apt-repository main 2>&1 >> /dev/null
 	add-apt-repository non-free 2>&1 >> /dev/null
 	add-apt-repository contrib 2>&1 >> /dev/null
-elif echo $osname "Ubuntu" ; then
+tee <<-EOF
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ PASSED! OS Detection ~ Ubuntu $relno
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EOF
+
+elif [[ "$osname" == "Debian" && "$relno" -ge "9" ]]; then
 	add-apt-repository main 2>&1 >> /dev/null
 	add-apt-repository universe 2>&1 >> /dev/null
 	add-apt-repository restricted 2>&1 >> /dev/null
 	add-apt-repository multiverse 2>&1 >> /dev/null
+tee <<-EOF
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ PASSED! OS Detection ~ Debian $relno
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EOF
+
+fi
+
 elif echo $osname "Rasbian" "Fedora" "CentOS"; then
 tee <<-EOF
 
