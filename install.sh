@@ -63,7 +63,7 @@ relno=$(lsb_release -sr)
 relno=$(printf "%.0f\n" "$relno")
 hostname=$(hostname -I | awk '{print $1}')
 
-if [ "$osname" == "Ubuntu" && "$relno" -ge "16" && "$relno" -le 18 ]; then
+if [ "$osname" == "Ubuntu" && "$relno" -ge "16" && "$relno" -le "18" ]; then
 	add-apt-repository main 2>&1 >> /dev/null
 	add-apt-repository non-free 2>&1 >> /dev/null
 	add-apt-repository contrib 2>&1 >> /dev/null
