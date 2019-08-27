@@ -64,7 +64,7 @@ osname=$(lsb_release -si)
 relno=$(lsb_release -sr)
 hostname=$(hostname -I | awk '{print $1}')
 # add repo
-osname=$([[ "$osname" = "Ubuntu" ]] && [[ $relno -ge 15 ]] && [[ $relno -le 18.09 ]]) || ([[ "$osname" = "Debian" ]] && [[ $relno -ge 8 ]])
+osname=$([ "$osname" = "Ubuntu" ] && [ $relno -ge 15 ] && [ $relno -le 18.09 || [ "$osname" = "Debian" ] && [ $relno -ge 8 ])
 if echo $osname "Debian" ; then
 	add-apt-repository main 2>&1 >> /dev/null
 	add-apt-repository non-free 2>&1 >> /dev/null
