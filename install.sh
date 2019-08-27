@@ -64,11 +64,11 @@ relno=$(printf "%.0f\n" "$relno")
 hostname=$(hostname -I | awk '{print $1}')
 # add repo
 
-if [[ "$osname" == "Debian" && ]]; then
+if echo $osname "Debian"; then
 	add-apt-repository main 2>&1 >> /dev/null
 	add-apt-repository non-free 2>&1 >> /dev/null
 	add-apt-repository contrib 2>&1 >> /dev/null
-elif [[ "$osname" == "Debian" ]]; then
+elif echo $osname "Ubuntu"; then
 	add-apt-repository main 2>&1 >> /dev/null
 	add-apt-repository universe 2>&1 >> /dev/null
 	add-apt-repository restricted 2>&1 >> /dev/null
