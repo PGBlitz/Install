@@ -42,7 +42,7 @@ fi
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⌛  Conduting a Base install - Please Standby
+⌛  Conduting a Base Install - Please Standby
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 apt-get install lsb-release -yqq 2>&1 >> /dev/null
