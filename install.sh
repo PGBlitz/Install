@@ -57,6 +57,38 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 
+#repo-check
+fullrel=$(lsb_release -sd)
+osname=$(lsb_release -si)
+## original code relno=$(lsb_release -sr | cut -d. -f1)
+relno=$(lsb_release -sr)
+hostname=$(hostname -I | awk '{print $1}')
+# add repo
+osname=$([ "$osname" = "Ubuntu" ] && [ $relno -ge 15 ] && [ $relno -le 18.09 ) || ([ "$osname" = "Debian" ] && [ $relno -ge 8 ])
+if echo $osname "Debian" ; then
+	add-apt-repository main 2>&1 >> /dev/null
+	add-apt-repository non-free 2>&1 >> /dev/null
+	add-apt-repository contrib 2>&1 >> /dev/null
+elif echo $osname "Ubuntu" ; then
+	add-apt-repository main 2>&1 >> /dev/null
+	add-apt-repository universe 2>&1 >> /dev/null
+	add-apt-repository restricted 2>&1 >> /dev/null
+	add-apt-repository multiverse 2>&1 >> /dev/null
+elif echo $osname "Rasbian" "Fedora" "CentOS"; then
+tee <<-EOF
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⛔ System Warning!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Supported: UB 16/18.04 ~ LTS/SERVER and Debian 9+
+This server may not be supported due to having the incorrect OS detected!
+
+For more information, read:
+https://pgblitz.com/threads/pg-install-instructions.243/
+EOF
+  sleep 10
+fi
+
 apt-get update -yqq 2>&1 >> /dev/null
 	export DEBIAN_FRONTEND=noninteractive
 apt-get upgrade -yqq 2>&1 >> /dev/null
