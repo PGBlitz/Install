@@ -115,8 +115,6 @@ path="/pg/stage/alias"
 cp -t /bin $path/plexguide $path/pg $path/pgblitz
 
 # Verifying the Commands Installed
-EOF
-
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
