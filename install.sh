@@ -126,6 +126,7 @@ chmod 775 /bin/plexguide /bin/pgblitz /bin/pg
 chown 1000:1000 /bin/plexguide /bin/pgblitz /bin/pg
 
 tee <<-EOF
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ↘️  Start AnyTime By Typing >>> pgblitz [or] plexguide [or] pg
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
