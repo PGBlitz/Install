@@ -9,7 +9,7 @@ package="curl wget software-properties-common git nano htop mc lshw zip unzip di
 
 tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🌎  NOTICE: PGBlitz Version 9 - Installer
+🌎  NOTICE: PGBlitz Version X - Installer
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 By installing, you agreeing to the terms and conditions of the GNUv3 License!
 Thanks To: You, the Linux Noobs, Sponsors, Supporters, Community & You!
@@ -79,7 +79,7 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⛔ System Warning!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Supported: UB 16/18.04 ~ LTS/SERVER and Debian 9+
+Supported: UB 18.04/20.04 ~ LTS/SERVER and Debian 9+
 This server may not be supported due to having the incorrect OS detected!
 
 For more information, read:
